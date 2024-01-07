@@ -24,7 +24,7 @@ export class TodoService {
     } 
 
     // data 추가
-    async AddUserItem(data: User): Promise<User> {            // id에 맞는 User가 없다면 null로 
+    async AddUserItem(data: User): Promise<User> {         
         return this.prismaService
             .user.create( { data: data } )
     }
@@ -34,7 +34,7 @@ export class TodoService {
         id: number,
         email: string, 
         name?: string
-        ): Promise<User> {            // id에 맞는 User가 없다면 null로 
+        ): Promise<User> {           
         return this.prismaService
             .user.update( { 
                 where: { id:Number(id) },
